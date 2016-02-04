@@ -67,6 +67,22 @@ Then, on Windows, to create the installer:
 
 Your freshly created Setup-Trelby-<version>.exe should be ready.
 
+2.6  Preparing for a Linux Installation
+=======================================
+
+Tested on an ubuntu laptop, reporting: jessie/sid.
+
+Expressed as a puppet Package[] resource, 
+I found the following libraries required:
+
+  package { [ 'python-lxml',
+              'libwxgtk2.8-0',
+              'libwxbase2.8-0',
+              'python-wxgtk2.8',
+              'python-wxversion',
+              'libwxgtk-media2.8-0' ]:
+    ensure => present
+  }
 
 3. Running Trelby in test mode
 ==============================
